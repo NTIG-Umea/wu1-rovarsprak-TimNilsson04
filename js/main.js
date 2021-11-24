@@ -23,8 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const translate = (text) => {
     // översätt texten till rövarspråket
-    console.log(text)
-    return text;
+    let translation = "";
+    let kommentarer = "aouieåäö";
+
+    for(let i = 0; i < text.length; i++){
+        
+        if (!kommentarer.includes(text.charAt(i))){
+            
+            translation+=text.charAt(i) +"o" +text.charAt(i);
+        }
+        
+        else{
+            translation+=text.charAt(i);
+
+        }
+    }
+
+    return translation;
+    
 };
 
 const display = (translation, element) => {
